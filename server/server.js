@@ -1,4 +1,9 @@
 /**
+ * This file creates an Express server,
+ * connects to the MongoDB database and,
+ * defined the routing for the HTTP Methods.
+ * 
+ * 
  * QUICK START GUIDES FOR REFERENCE:
  * 
  * Express: https://expressjs.com/en/starter/hello-world.html
@@ -18,6 +23,7 @@ const express = require('express');
 const mongoose = require('mongoose')
 const cors = require('cors');
 const flightsController = require('./controllers/flights.controller.js');
+const figlet = require("figlet")
 
   
 // Create an Express app
@@ -31,6 +37,7 @@ app.use(cors());
 
 // Start the server
 app.listen(process.env.PORT);
+    console.log(`Server running on port ${process.env.PORT}`);
 
 
 // Create and call function to connect to database
@@ -38,6 +45,7 @@ async function dbConnect() {
     try {
         await mongoose.connect(process.env.MONGO_URI);
         console.log("Successfully connect to MongoDB Database");
+        figlet.text("SkyStorm", function (err, data){ console.log(data) })
     } catch (err) {
         console.log(err);
     }
@@ -46,7 +54,7 @@ async function dbConnect() {
 dbConnect();
 
   
-// HTTP methods & routes
+// Routing for HTTP methods
 app.get('/flights', flightsController.getFlights);
 app.get('/flights/:id', flightsController.getFlight);
 app.post('/flights', flightsController.createFlight);
