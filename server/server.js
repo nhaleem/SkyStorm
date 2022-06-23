@@ -2,6 +2,7 @@
  * QUICK START GUIDES FOR REFERENCE:
  * 
  * Express: https://expressjs.com/en/starter/hello-world.html
+ * CORS: https://expressjs.com/en/resources/middleware/cors.html
  * DotEnv: https://www.npmjs.com/package/dotenv
  * Mongoose: https://mongoosejs.com/docs/
  * 
@@ -32,7 +33,7 @@ app.use(cors());
 app.listen(process.env.PORT);
 
 
-// Create and call function to onnect to database
+// Create and call function to connect to database
 async function dbConnect() {
     try {
         await mongoose.connect(process.env.MONGO_URI);
@@ -45,9 +46,9 @@ async function dbConnect() {
 dbConnect();
 
   
-// Routing
-app.get('/flights', flightsController.fetchFlights);
-app.get('/flights/:id', flightsController.fetchFlight);
+// HTTP methods & routes
+app.get('/flights', flightsController.getFlights);
+app.get('/flights/:id', flightsController.getFlight);
 app.post('/flights', flightsController.createFlight);
 app.put('/flights/:id', flightsController.updateFlight);
 app.delete('/flights/:id', flightsController.deleteFlight);
