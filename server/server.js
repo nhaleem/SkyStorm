@@ -37,15 +37,18 @@ app.use(cors());
 
 // Start the server
 app.listen(process.env.PORT);
+    console.log("");
     console.log(`Server running on port ${process.env.PORT}`);
-
 
 // Create and call function to connect to database
 async function dbConnect() {
     try {
         await mongoose.connect(process.env.MONGO_URI);
-        console.log("Successfully connect to MongoDB Database");
-        figlet.text("SkyStorm", function (err, data){ console.log(data) })
+        console.log('Successfully connect to SkyStorm Database');
+        console.log('');
+        console.log("** Welcome to SkyStorm Flight Management **");
+        figlet.text('SkyStorm', function (err, data){console.log(data)})
+        console.log("");
     } catch (err) {
         console.log(err);
     }
