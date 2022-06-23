@@ -1,0 +1,19 @@
+{
+  "name": "skystorm",
+  "version": "1.0.0",
+  "description": "An airline flight management system.",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Neil Haleem",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongoose": "^6.4.0",
+    "nodemon": "^2.0.16"
+  }
+}
