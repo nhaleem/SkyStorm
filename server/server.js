@@ -44,7 +44,7 @@ app.listen(process.env.PORT);
 async function dbConnect() {
     try {
         await mongoose.connect(process.env.MONGO_URI);
-        console.log('Successfully connect to SkyStorm Database');
+        console.log('Successfully connect to MongoDB Database');
         console.log('');
         console.log("** Welcome to SkyStorm Flight Management **");
         figlet.text('SkyStorm', function (err, data){console.log(data)})

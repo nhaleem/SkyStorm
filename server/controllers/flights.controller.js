@@ -1,3 +1,11 @@
+/**
+ * 
+ * HTTP METHODS
+ * 
+ */
+
+
+// Use the flight schema model
 const Flight = require("../models/flight");
 
 
