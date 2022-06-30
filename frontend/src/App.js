@@ -6,6 +6,7 @@
 import './App.css';
 import { useState, useEffect } from "react";
 import axios from "axios";
+import {Table} from 'react-bootstrap';
 
 function App() {
   // State
@@ -179,8 +180,45 @@ function App() {
                 flights.map((flight) => {
                   return (
                     <div key={flight._id}>
-                      <h3>{flight.flightNumber}</h3>
-                      <h3>{flight.arrivalAirport}</h3>
+                      
+                      <Table striped bordered hover variant="dark">
+                           <thead>
+                             <tr>
+                               <th>Flight Number</th>
+                               <th>Passenger Limit</th>
+                               <th>Current Passengers</th>
+                               <th>Arr Airport</th>
+                               <th>Arr Date</th>
+                               <th>Arr Time</th>
+                               <th>Dep Airport</th>
+                               <th>Dep Date</th>
+                               <th>Dep Time</th>
+                             </tr>
+                           </thead>
+                   
+                           <tbody>
+                             <tr>
+                               <td>{flight.flightNumber}</td>
+                               <td>{flight.passengerLimit}</td>
+                               <td>{flight.currentPassengers}</td>
+                               <td>{flight.arrivalAirport}</td>
+                               <td>{flight.arrivalDate}</td>
+                               <td>{flight.arrivalTime}</td>
+                               <td>{flight.departureAirport}</td>
+                               <td>{flight.departureDate}</td>
+                               <td>{flight.departureTime}</td>
+                             </tr>
+                           </tbody>
+
+
+                           </Table>
+
+
+
+
+
+
+
                       <button onClick={() => deleteFlight(flight._id)}>Delete flight</button>
                       <button onClick={() => toggleUpdate(flight)}>Update flight</button>
                     </div>
