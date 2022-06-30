@@ -3,12 +3,14 @@
  * Axios: https://axios-http.com/docs/example
  */
 
+ import Navbar from "./Navbar"
  import { useState, useEffect } from "react";
  import axios from "axios";
  import {Table} from 'react-bootstrap';
  import {Button} from 'react-bootstrap';
  import {ButtonToolbar} from 'react-bootstrap';
  import {ButtonGroup} from 'react-bootstrap';
+ import {ProgressBar} from 'react-bootstrap';
  import './App.css';
 
  
@@ -175,11 +177,12 @@
    };
  
    return (
+    <>
+    <Navbar />
        <div class="page">
          <div className="App">
            <div className="content-wrapper">
              <div className="content">
-               <h3 className="content-title">Scheduled Flights</h3>
 
                {flights &&
                  flights.map((flight) => {
@@ -192,6 +195,7 @@
                                 <th>Flight No.</th>
                                 <th>Seat Limit</th>
                                 <th>Curr Seats</th>
+                                <th>Capacity</th>
                                 <th>Arr Airport</th>
                                 <th>Arr Date</th>
                                 <th>Arr Time</th>
@@ -205,6 +209,7 @@
                                 <td>{flight.flightNumber}</td>
                                 <td>{flight.passengerLimit}</td>
                                 <td>{flight.currentPassengers}</td>
+                                <td><ProgressBar now={((flight.currentPassengers/flight.passengerLimit)*100)} /></td>
                                 <td>{flight.arrivalAirport}</td>
                                 <td>{flight.arrivalDate}</td>
                                 <td>{flight.arrivalTime}</td>
@@ -224,7 +229,7 @@
                           <Button className="form-buttons" variant="warning" size="sm" onClick={() => toggleUpdate(flight)}>Update</Button>
                           </ButtonGroup>
                         </ButtonToolbar>
-                        
+
                         </div>
                      </div>
                    );
@@ -244,6 +249,24 @@
                        value={updateForm.flightNumber}
                        name="flightNumber"
                        placeholder="Flight Number"
+                     />
+                   </div>
+                   <div>
+                     <input
+                       className="inputform"
+                       onChange={handleUpdateFieldChange}
+                       value={updateForm.passengerLimit}
+                       name="passengerLimit"
+                       placeholder="Passenger Limit"
+                     />
+                   </div>
+                   <div>
+                     <input
+                       className="inputform"
+                       onChange={handleUpdateFieldChange}
+                       value={updateForm.currentPassengers}
+                       name="currentPassengers"
+                       placeholder="Current Passengers"
                      />
                    </div>
                    <div>
@@ -300,24 +323,7 @@
                        placeholder="Departure Time"
                      />
                    </div>
-                   <div>
-                     <input
-                       className="inputform"
-                       onChange={handleUpdateFieldChange}
-                       value={updateForm.passengerLimit}
-                       name="passengerLimit"
-                       placeholder="Passenger Limit"
-                     />
-                   </div>
-                   <div>
-                     <input
-                       className="inputform"
-                       onChange={handleUpdateFieldChange}
-                       value={updateForm.currentPassengers}
-                       name="currentPassengers"
-                       placeholder="Current Passengers"
-                     />
-                   </div>
+              
                    <br />
                    <button type="submit" class="btn btn-dark  btn-sm">Update</button>
                  </form>
@@ -335,6 +341,24 @@
                        value={createForm.flightNumber}
                        name="flightNumber"
                        placeholder="Flight Number"
+                     />
+                   </div>
+                   <div>
+                     <input
+                       className="inputform"
+                       onChange={updateCreateFormField}
+                       value={createForm.passengerLimit}
+                       name="passengerLimit"
+                       placeholder="Passenger Limit"
+                     />
+                   </div>
+                   <div>
+                     <input
+                       className="inputform"
+                       onChange={updateCreateFormField}
+                       value={createForm.currentPassengers}
+                       name="currentPassengers"
+                       placeholder="Current Passengers"
                      />
                    </div>
                    <div>
@@ -391,24 +415,7 @@
                        placeholder="Departure Time"
                      />
                    </div>
-                   <div>
-                     <input
-                       className="inputform"
-                       onChange={updateCreateFormField}
-                       value={createForm.passengerLimit}
-                       name="passengerLimit"
-                       placeholder="Passenger Limit"
-                     />
-                   </div>
-                   <div>
-                     <input
-                       className="inputform"
-                       onChange={updateCreateFormField}
-                       value={createForm.currentPassengers}
-                       name="currentPassengers"
-                       placeholder="Current Passengers"
-                     />
-                   </div>
+            
                    <br />
                    <button type="submit" class="btn btn-dark  btn-sm">Submit</button>
                  </form>
@@ -417,7 +424,9 @@
            </div>
          </div>
        </div>
+       </>
    );
+   
  }
  
  export default App; 

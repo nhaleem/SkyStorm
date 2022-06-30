@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
+import App from './components/App';
 import 'C:/Users/PSP/Desktop/Project 1 - SkyStorm/SkyStorm/frontend/node_modules/bootstrap/dist/css/bootstrap.css';
-import './App.css';
+import './components/App.css';
 
 
 
