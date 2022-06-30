@@ -170,205 +170,210 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <div>
-        <h2>Flights:</h2>
-        {flights &&
-          flights.map((flight) => {
-            return (
-              <div key={flight._id}>
-                <h3>{flight.flightNumber}</h3>
-                <button onClick={() => deleteFlight(flight._id)}>
-                  Delete flight
-                </button>
-                <button onClick={() => toggleUpdate(flight)}>Update flight</button>
+      <div class="page">
+        <div className="App">
+          <div className="content-wrapper">
+            <div className="content">
+              <h3 className="content-title">Scheduled Flights</h3>
+              {flights &&
+                flights.map((flight) => {
+                  return (
+                    <div key={flight._id}>
+                      <h3>{flight.flightNumber}</h3>
+                      <h3>{flight.arrivalAirport}</h3>
+                      <button onClick={() => deleteFlight(flight._id)}>Delete flight</button>
+                      <button onClick={() => toggleUpdate(flight)}>Update flight</button>
+                    </div>
+                  );
+                })}
               </div>
-            );
-          })}
+          </div>
+
+          <div className="sidebar">      
+            {updateForm._id && (
+              <div>
+                <h5 className="sidebar-title">Update Flight</h5>
+                <form onSubmit={updateFlight}>
+                  <div>
+                    <input
+                      className="inputform"
+                      onChange={handleUpdateFieldChange}
+                      value={updateForm.flightNumber}
+                      name="flightNumber"
+                      placeholder="Flight Number"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      className="inputform"
+                      onChange={handleUpdateFieldChange}
+                      value={updateForm.arrivalAirport}
+                      name="arrivalAirport"
+                      placeholder="Arrival Airport"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      className="inputform"
+                      onChange={handleUpdateFieldChange}
+                      value={updateForm.arrivalDate}
+                      name="arrivalDate"
+                      placeholder="Arrival Date"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      className="inputform"
+                      onChange={handleUpdateFieldChange}
+                      value={updateForm.arrivalTime}
+                      name="arrivalTime"
+                      placeholder="Arrival Time"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      className="inputform"
+                      onChange={handleUpdateFieldChange}
+                      value={updateForm.departureAirport}
+                      name="departureAirport"
+                      placeholder="Departure Airport"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      className="inputform"
+                      onChange={handleUpdateFieldChange}
+                      value={updateForm.departureDate}
+                      name="departureDate"
+                      placeholder="Departure Date"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      className="inputform"
+                      onChange={handleUpdateFieldChange}
+                      value={updateForm.departureTime}
+                      name="departureTime"
+                      placeholder="Departure Time"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      className="inputform"
+                      onChange={handleUpdateFieldChange}
+                      value={updateForm.passengerLimit}
+                      name="passengerLimit"
+                      placeholder="Passenger Limit"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      className="inputform"
+                      onChange={handleUpdateFieldChange}
+                      value={updateForm.currentPassengers}
+                      name="currentPassengers"
+                      placeholder="Current Passengers"
+                    />
+                  </div>
+                  <br />
+                  <button type="submit">Update flight</button>
+                </form>
+              </div>
+            )}
+
+            {!updateForm._id && (
+              <div>
+                <h5 className="sidebar-title">Add Flight</h5>
+                <form onSubmit={createFlight}>
+                  <div>
+                    <input
+                      className="inputform"
+                      onChange={updateCreateFormField}
+                      value={createForm.flightNumber}
+                      name="flightNumber"
+                      placeholder="Flight Number"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      className="inputform"
+                      onChange={updateCreateFormField}
+                      value={createForm.arrivalAirport}
+                      name="arrivalAirport"
+                      placeholder="Arrival Airport"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      className="inputform"
+                      onChange={updateCreateFormField}
+                      value={createForm.arrivalDate}
+                      name="arrivalDate"
+                      placeholder="Arrival Date"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      className="inputform"
+                      onChange={updateCreateFormField}
+                      value={createForm.arrivalTime}
+                      name="arrivalTime"
+                      placeholder="Arrival Time"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      className="inputform"
+                      onChange={updateCreateFormField}
+                      value={createForm.departureAirport}
+                      name="departureAirport"
+                      placeholder="Departure Airport"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      className="inputform"
+                      onChange={updateCreateFormField}
+                      value={createForm.departureDate}
+                      name="departureDate"
+                      placeholder="Departure Date"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      className="inputform"
+                      onChange={updateCreateFormField}
+                      value={createForm.departureTime}
+                      name="departureTime"
+                      placeholder="Departure Time"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      className="inputform"
+                      onChange={updateCreateFormField}
+                      value={createForm.passengerLimit}
+                      name="passengerLimit"
+                      placeholder="Passenger Limit"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      className="inputform"
+                      onChange={updateCreateFormField}
+                      value={createForm.currentPassengers}
+                      name="currentPassengers"
+                      placeholder="Current Passengers"
+                    />
+                  </div>
+                  <br />
+                  <button type="button" class="btn btn-warning  btn-sm">Submit</button>
+                </form>
+              </div>
+            )}
+          </div>
+        </div>
       </div>
-
-      {updateForm._id && (
-        <div>
-          <h2>Update flight</h2>
-          <form onSubmit={updateFlight}>
-            <div>
-              <input
-                className="inputform"
-                onChange={handleUpdateFieldChange}
-                value={updateForm.flightNumber}
-                name="flightNumber"
-                placeholder="Flight Number"
-              />
-            </div>
-            <div>
-              <input
-                className="inputform"
-                onChange={handleUpdateFieldChange}
-                value={updateForm.arrivalAirport}
-                name="arrivalAirport"
-                placeholder="Arrival Airport"
-              />
-            </div>
-            <div>
-              <input
-                className="inputform"
-                onChange={handleUpdateFieldChange}
-                value={updateForm.arrivalDate}
-                name="arrivalDate"
-                placeholder="Arrival Date"
-              />
-            </div>
-            <div>
-              <input
-                className="inputform"
-                onChange={handleUpdateFieldChange}
-                value={updateForm.arrivalTime}
-                name="arrivalTime"
-                placeholder="Arrival Time"
-              />
-            </div>
-            <div>
-              <input
-                className="inputform"
-                onChange={handleUpdateFieldChange}
-                value={updateForm.departureAirport}
-                name="departureAirport"
-                placeholder="Departure Airport"
-              />
-            </div>
-            <div>
-              <input
-                className="inputform"
-                onChange={handleUpdateFieldChange}
-                value={updateForm.departureDate}
-                name="departureDate"
-                placeholder="Departure Date"
-              />
-            </div>
-            <div>
-              <input
-                className="inputform"
-                onChange={handleUpdateFieldChange}
-                value={updateForm.departureTime}
-                name="departureTime"
-                placeholder="Departure Time"
-              />
-            </div>
-            <div>
-              <input
-                className="inputform"
-                onChange={handleUpdateFieldChange}
-                value={updateForm.passengerLimit}
-                name="passengerLimit"
-                placeholder="Passenger Limit"
-              />
-            </div>
-            <div>
-              <input
-                className="inputform"
-                onChange={handleUpdateFieldChange}
-                value={updateForm.currentPassengers}
-                name="currentPassengers"
-                placeholder="Current Passengers"
-              />
-            </div>
-            <br />
-            <button type="submit">Update flight</button>
-          </form>
-        </div>
-      )}
-
-      {!updateForm._id && (
-        <div>
-          <h2>Create flight</h2>
-          <form onSubmit={createFlight}>
-            <div>
-              <input
-                className="inputform"
-                onChange={updateCreateFormField}
-                value={createForm.flightNumber}
-                name="flightNumber"
-                placeholder="Flight Number"
-              />
-            </div>
-            <div>
-              <input
-                className="inputform"
-                onChange={updateCreateFormField}
-                value={createForm.arrivalAirport}
-                name="arrivalAirport"
-                placeholder="Arrival Airport"
-              />
-            </div>
-            <div>
-              <input
-                className="inputform"
-                onChange={updateCreateFormField}
-                value={createForm.arrivalDate}
-                name="arrivalDate"
-                placeholder="Arrival Date"
-              />
-            </div>
-            <div>
-              <input
-                className="inputform"
-                onChange={updateCreateFormField}
-                value={createForm.arrivalTime}
-                name="arrivalTime"
-                placeholder="Arrival Time"
-              />
-            </div>
-            <div>
-              <input
-                className="inputform"
-                onChange={updateCreateFormField}
-                value={createForm.departureAirport}
-                name="departureAirport"
-                placeholder="Departure Airport"
-              />
-            </div>
-            <div>
-              <input
-                className="inputform"
-                onChange={updateCreateFormField}
-                value={createForm.departureDate}
-                name="departureDate"
-                placeholder="Departure Date"
-              />
-            </div>
-            <div>
-              <input
-                className="inputform"
-                onChange={updateCreateFormField}
-                value={createForm.departureTime}
-                name="departureTime"
-                placeholder="Departure Time"
-              />
-            </div>
-            <div>
-              <input
-                className="inputform"
-                onChange={updateCreateFormField}
-                value={createForm.passengerLimit}
-                name="passengerLimit"
-                placeholder="Passenger Limit"
-              />
-            </div>
-            <div>
-              <input
-                className="inputform"
-                onChange={updateCreateFormField}
-                value={createForm.currentPassengers}
-                name="currentPassengers"
-                placeholder="Current Passengers"
-              />
-            </div>
-            <br />
-            <button type="submit">Create flight</button>
-          </form>
-        </div>
-      )}
-    </div>
   );
 }
 
@@ -388,11 +393,28 @@ export default App;
 
 
 
+/**
 
+<div class="page">
+  <div class="wrapper">
+    <div class="content-wrapper">
+      <div class="content">
+        <h1>Content</h1>
+        <p>&larr; Responsive Width &rarr;</p>
+      </div>
+    </div>
+    <div class="sidebar">
+      <h2>Page sidebar</h2>
+      <p>&larr; Fixed Width &rarr;</p>
+    </div>
+  </div>
+</div>
+<!-- Read Article:
+https://superdevresources.com/fixed-width-sidebar/
+-->
+<a href="https://superdevresources.com/fixed-width-sidebar/" target="_blank">Fixed-width sidebar in responsive design</a>
 
-
-
-
+**/
 
 
 

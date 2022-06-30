@@ -1,5 +1,100 @@
+body {
+    background: url(https://www.securityguardtrainingcentral.com/wp-content/uploads/2020/04/become-airport-security.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    text-align: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode';
+    color: #fff;
+  }
+
+
+  .cardgroup {
+    font-size: .75em;
+    padding-top: -10px;
+  
+  }
+
+  .content-title {
+    color: rgb(255, 140, 0);
+    text-align: center;
+  }
+
+  .sidebar-title {
+    margin-bottom: 15px;
+    color: lightgray;
+    text-align: center;
+  }
+  
+  .page {
+    margin: 20px 0;
+  }
+  
+  .page:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .App {
+    max-width: 1160px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 20px;
+    min-height: 600px;
+  }
+  
+  .content-wrapper {
+    float: right;
+    width: 100%;
+  }
+  
+  .content {
+    margin-left: 270px;
+    clear: both;
+    overflow: auto;
+    background: #000000;
+    background: rgba(0, 0, 0, 0.3);
+    min-height: 600px;
+  }
+  
+  .sidebar {
+    text-align: center;
+    font-size: .75em;
+    position: fixed;
+    width: 250px;
+    margin-top: auto;
+    margin-right: -320px;
+    padding: 15px;
+    float: right;
+    overflow: hidden;
+    background: #000000;
+    background: rgba(0, 0, 0, 0.3);
+    color: #eee;
+    min-height: 400px;
+    max-width: 250px;
+  }
+  
+  a{
+    display: block;
+    text-align:center;
+    margin: 10px auto;
+    width: 100%;
+    color: #2c3e50;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .sidebar {
+      display: none;
+    }
+    .content {
+      margin-left: 0;
+    }
+  }
+
 .inputform {
     border-color: rgb(215, 215, 215);
-    border-radius: 2px;
+    border-radius: 3px;
     margin: 5px;
 }
