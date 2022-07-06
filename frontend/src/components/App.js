@@ -19,7 +19,6 @@ function App() {
     <>
         <Navbar />
 
-
         <div class="wrapper">
             {/* <header class="header">Header: Fixed height</header> */}
             <section class="content">

@@ -12,11 +12,11 @@ body {
 nav {
     display: flex;
     align-items: center;
-    height: 100px;
+    height: 85px;
     padding: 30px 25px;
     margin-bottom: 35px;
-    background: rgb(16,19,27);
     background: linear-gradient(90deg, rgba(16,19,27,1) 0%, rgba(18,96,139,0.6877450809425333) 100%);
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.4);
     min-width: 1200px;
 }
 
@@ -32,7 +32,7 @@ nav {
 }
 
 .nav--title {
-    color: #ffffff;
+    color: white;
     font-weight: 400;
     font-size: 14px;
     margin-right: 19px;
@@ -67,11 +67,11 @@ nav {
   }
 
 .wrapper{
-    min-height: 50vh;
     margin-top: 0px;
     display: flex;
     flex-direction: column;
 }
+
 .content {
     display: flex;
     flex: 1;
@@ -86,13 +86,14 @@ nav {
 .main{
     flex: 1;
     order: 2;
-    background: rgb(16,19,27);
     background: linear-gradient(90deg, rgba(16,19,27,1) 0%, rgba(18,96,139,0.6877450809425333) 100%);
     margin-top: 0;
     min-width: 700px;
     padding: 20px;
-
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.6);
 }
+
+
 .sidebar-first{
     margin: 25px;
     margin-top: 0px;
@@ -104,7 +105,6 @@ nav {
     text-align: center;
     height: 460px;
     padding: 30px 0;
-    background: rgb(0, 0, 0);
     background: linear-gradient(90deg, rgba(16,19,27,1) 0%, rgba(18,96,139,0.6877450809425333) 100%);
     /* color: #fff; */
     top: 10px;
@@ -114,6 +114,7 @@ nav {
     min-width: 225px;
     max-width: 275px;
     font-size: 0.85em;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.6);
 }
 .add-flight-button{
     padding: 15px;
@@ -129,7 +130,6 @@ nav {
     text-align: center;
     height: 460px;
     padding: 20px;
-    background: rgb(16,19,27);
     background: linear-gradient(90deg, rgba(16,19,27,1) 0%, rgba(18,96,139,0.6877450809425333) 100%);
     top: 10px;
     bottom: auto;
@@ -137,8 +137,8 @@ nav {
     order: 3;
     min-width: 225px;
     max-width: 275px;
-
     font-size: 0.85em;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.6);
 }
 .update-flight-button{
     padding: 15px;
@@ -168,7 +168,7 @@ nav {
 }
 .sidebar-title {
     margin-bottom: 15px;
-    color: rgb(211, 211, 211);
+    color: orange;
     text-align: center;
     font-size: 1.25em;
 }

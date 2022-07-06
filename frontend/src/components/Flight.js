@@ -49,10 +49,10 @@ export default function Flight({ flight }) {
                     <div className="modify-buttons">
                       <ButtonToolbar aria-label="Toolbar with button groups">
                           <ButtonGroup className="me-2" aria-label="First group">
-                                <Button className="form-buttons" variant="link" size="sm" onClick={() => store.deleteFlight(flight._id)}>Delete</Button>
+                                <Button className="form-buttons" variant="link" style={{color: "pink"}} size="sm" onClick={() => store.deleteFlight(flight._id)}>Delete</Button>
                           </ButtonGroup>
                           <ButtonGroup className="me-2" aria-label="Second group">
-                                <Button className="form-buttons" variant="link" size="sm" onClick={() => store.toggleUpdate(flight)}>Update</Button>
+                                <Button className="form-buttons" variant="link" style={{color: "pink"}} size="sm" onClick={() => store.toggleUpdate(flight)}>Update</Button>
                           </ButtonGroup>
                       </ButtonToolbar>
                     </div>
