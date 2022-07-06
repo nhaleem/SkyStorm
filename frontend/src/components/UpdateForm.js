@@ -82,7 +82,9 @@ export default function UpdateForm() {
                       placeholder="Dep Time"
                     />
 
-                    <button type="submit" class="btn btn-dark btn-sm">Update</button>
+                    <div class="update-flight-button">
+                    <button type="submit" class="btn btn-warning btn-sm">Update</button>
+                    </div>
                   </form>
           </>
         );

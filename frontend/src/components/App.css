@@ -46,9 +46,28 @@ nav {
 }
 
 
+.react-project-blueprint {
+    height: 5vmin;
+    pointer-events: none;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .react-project-blueprint {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
 .wrapper{
-    min-height: 100vh;
-    /* background: rgb(0, 0, 0); */
+    min-height: 50vh;
     margin-top: 0px;
     display: flex;
     flex-direction: column;
@@ -83,17 +102,21 @@ nav {
     position: -o-sticky;
     position: sticky;
     text-align: center;
-    height: 425px;
+    height: 460px;
     padding: 30px 0;
     background: rgb(0, 0, 0);
     background: linear-gradient(90deg, rgba(16,19,27,1) 0%, rgba(18,96,139,0.6877450809425333) 100%);
     /* color: #fff; */
     top: 10px;
     bottom:50%;
-    width: 20%;
+    width: 18%;
     order: 1;
-    min-width: 250px;
+    min-width: 225px;
+    max-width: 275px;
     font-size: 0.85em;
+}
+.add-flight-button{
+    padding: 15px;
 }
 .sidebar-second{ 
     margin: 25px;
@@ -104,16 +127,21 @@ nav {
     position: -o-sticky;
     position: sticky;
     text-align: center;
-    height: 425px;
-    padding: 30px 0;
+    height: 460px;
+    padding: 20px;
     background: rgb(16,19,27);
     background: linear-gradient(90deg, rgba(16,19,27,1) 0%, rgba(18,96,139,0.6877450809425333) 100%);
     top: 10px;
     bottom: auto;
-    width: 20%;
+    width: 18%;
     order: 3;
-    min-width: 250px;
+    min-width: 225px;
+    max-width: 275px;
+
     font-size: 0.85em;
+}
+.update-flight-button{
+    padding: 15px;
 }
 
 #Table, th {
@@ -128,15 +156,10 @@ nav {
     color: #90e1ff;
 } 
 .modify-buttons {
-    text-align: center;
-    margin-left: none;
     margin-top: -10px;
-    margin-bottom: 6px;
-    padding: 10px;
+    margin-bottom: 10px;
 }
-.cardgroup {
-    font-size: .75em;
-}
+
 .content-title {
     color: rgb(0, 0, 0);
     text-align: right;
@@ -145,28 +168,13 @@ nav {
 }
 .sidebar-title {
     margin-bottom: 15px;
-    color: lightgray;
+    color: rgb(211, 211, 211);
     text-align: center;
     font-size: 1.25em;
 }
-.progresstext {
-    font-size: 0.75em;
-    font-weight: 300;
-    text-align: center;
-}
-
-
-
-a{
-    display: block;
-    text-align:center;
-    margin: 10px auto;
-    width: 100%;
-    color: #2c3e50;
-}
 
 .inputform {
-    border-color: rgb(215, 215, 215);
+    border-color: rgb(17, 100, 128);
     border-radius: 3px;
     margin: 5px;
 }

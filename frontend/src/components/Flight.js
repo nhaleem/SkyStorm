@@ -4,6 +4,7 @@ import {ButtonGroup} from 'react-bootstrap';
 import {Table} from 'react-bootstrap';
 import {ProgressBar} from 'react-bootstrap';
 import flightsStore from "../stores/flightsStore";
+import "./App.css";
 
 export default function Flight({ flight }) {
   const store = flightsStore((store) => {
@@ -34,7 +35,7 @@ export default function Flight({ flight }) {
                       <td>{flight.flightNumber}</td>
                       <td>{flight.passengerLimit}</td>
                       <td>{flight.currentPassengers}</td>
-                      <td><ProgressBar now={((flight.currentPassengers/flight.passengerLimit)*100)} /></td>
+                      <td><ProgressBar variant="info" now={((flight.currentPassengers/flight.passengerLimit)*100)} /></td>
                       <td>{flight.arrivalAirport}</td>
                       <td>{flight.arrivalDate}</td>
                       <td>{flight.arrivalTime}</td>
@@ -48,10 +49,10 @@ export default function Flight({ flight }) {
                     <div className="modify-buttons">
                       <ButtonToolbar aria-label="Toolbar with button groups">
                           <ButtonGroup className="me-2" aria-label="First group">
-                                <Button className="form-buttons" variant="warning" size="sm" onClick={() => store.deleteFlight(flight._id)}>Delete</Button>
+                                <Button className="form-buttons" variant="link" size="sm" onClick={() => store.deleteFlight(flight._id)}>Delete</Button>
                           </ButtonGroup>
                           <ButtonGroup className="me-2" aria-label="Second group">
-                                <Button className="form-buttons" variant="warning" size="sm" onClick={() => store.toggleUpdate(flight)}>Update</Button>
+                                <Button className="form-buttons" variant="link" size="sm" onClick={() => store.toggleUpdate(flight)}>Update</Button>
                           </ButtonGroup>
                       </ButtonToolbar>
                     </div>

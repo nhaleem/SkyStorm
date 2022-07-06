@@ -85,7 +85,9 @@ export default function CreateForm() {
                     placeholder="Dep Time"
                     />
                 
-                    <button type="submit" class="btn btn-dark btn-sm">Submit</button>
+                    <div class="add-flight-button">
+                    <button type="submit" class="btn btn-warning btn-sm">Submit</button>
+                    </div>
                 </form>
             </>
         );
