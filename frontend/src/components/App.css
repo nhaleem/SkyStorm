@@ -12,17 +12,13 @@ body {
 nav {
     display: flex;
     align-items: center;
-    height: 75px;
+    height: 100px;
     padding: 30px 25px;
     margin-bottom: 35px;
-
-background: rgb(16,19,27);
-background: linear-gradient(90deg, rgba(16,19,27,1) 0%, rgba(18,96,139,0.6877450809425333) 100%);
-
+    background: rgb(16,19,27);
+    background: linear-gradient(90deg, rgba(16,19,27,1) 0%, rgba(18,96,139,0.6877450809425333) 100%);
+    min-width: 1200px;
 }
-
-
-
 
 .nav--logo_text, .nav--title {
     margin: 0;
@@ -50,19 +46,87 @@ background: linear-gradient(90deg, rgba(16,19,27,1) 0%, rgba(18,96,139,0.6877450
 }
 
 
+.wrapper{
+    min-height: 100vh;
+    /* background: rgb(0, 0, 0); */
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+}
+.content {
+    display: flex;
+    flex: 1;
+    /* padding: 50px; */
+    /* background: rgb(0, 0, 0); */
+    /* color: #000;  */
+}
+.columns{
+    display: flex;
+    flex:1;
+}
+.main{
+    flex: 1;
+    order: 2;
+    background: rgb(16,19,27);
+    background: linear-gradient(90deg, rgba(16,19,27,1) 0%, rgba(18,96,139,0.6877450809425333) 100%);
+    margin-top: 0;
+    min-width: 700px;
+    padding: 20px;
+
+}
+.sidebar-first{
+    margin: 25px;
+    margin-top: 0px;
+    position: -webkit-sticky;
+    position: -moz-sticky;
+    position: -ms-sticky;
+    position: -o-sticky;
+    position: sticky;
+    text-align: center;
+    height: 425px;
+    padding: 30px 0;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(90deg, rgba(16,19,27,1) 0%, rgba(18,96,139,0.6877450809425333) 100%);
+    /* color: #fff; */
+    top: 10px;
+    bottom:50%;
+    width: 20%;
+    order: 1;
+    min-width: 250px;
+    font-size: 0.85em;
+}
+.sidebar-second{ 
+    margin: 25px;
+    margin-top: 0px;
+    position: -webkit-sticky;
+    position: -moz-sticky;
+    position: -ms-sticky;
+    position: -o-sticky;
+    position: sticky;
+    text-align: center;
+    height: 425px;
+    padding: 30px 0;
+    background: rgb(16,19,27);
+    background: linear-gradient(90deg, rgba(16,19,27,1) 0%, rgba(18,96,139,0.6877450809425333) 100%);
+    top: 10px;
+    bottom: auto;
+    width: 20%;
+    order: 3;
+    min-width: 250px;
+    font-size: 0.85em;
+}
+
 #Table, th {
     font-weight: normal;
     font-size: .85em;
     text-align: center;
 } 
-
 #Table, tr, td {
     font-weight: normal;
     font-size: .85em;
     text-align: center;
-    color: #25c5ff;
+    color: #90e1ff;
 } 
-
 .modify-buttons {
     text-align: center;
     margin-left: none;
@@ -70,93 +134,39 @@ background: linear-gradient(90deg, rgba(16,19,27,1) 0%, rgba(18,96,139,0.6877450
     margin-bottom: 6px;
     padding: 10px;
 }
-
 .cardgroup {
-font-size: .75em;
-
+    font-size: .75em;
 }
-
 .content-title {
-color: rgb(0, 0, 0);
-text-align: right;
-padding: 10px;
-background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    text-align: right;
+    padding: 10px;
+    background: rgb(255, 255, 255);
 }
-
 .sidebar-title {
-margin-bottom: 15px;
-color: lightgray;
-text-align: center;
+    margin-bottom: 15px;
+    color: lightgray;
+    text-align: center;
+    font-size: 1.25em;
+}
+.progresstext {
+    font-size: 0.75em;
+    font-weight: 300;
+    text-align: center;
 }
 
-.page {
-margin: 20px 0;
-}
 
-.page:after {
-content: "";
-display: table;
-clear: both;
-}
-
-.App {
-max-width: 1160px;
-margin: 0 auto;
-position: relative;
-padding: 0 20px;
-min-height: 600px;
-}
-
-.content-wrapper {
-float: right;
-width: 100%;
-}
-
-.content {
-margin-left: 270px;
-clear: both;
-overflow: auto;
-background: #000000;
-background: rgba(0, 0, 0, 0.3);
-min-height: 600px;
-}
-
-.sidebar {
-text-align: center;
-font-size: .75em;
-position: fixed;
-width: 250px;
-margin-top: auto;
-margin-right: -320px;
-padding: 15px;
-float: right;
-overflow: hidden;
-background: #000000;
-background: rgba(0, 0, 0, 0.3);
-color: #eee;
-min-height: 400px;
-max-width: 250px;
-}
 
 a{
-display: block;
-text-align:center;
-margin: 10px auto;
-width: 100%;
-color: #2c3e50;
-}
-
-@media only screen and (max-width: 768px) {
-.sidebar {
-    display: none;
-}
-.content {
-    margin-left: 0;
-}
+    display: block;
+    text-align:center;
+    margin: 10px auto;
+    width: 100%;
+    color: #2c3e50;
 }
 
 .inputform {
-border-color: rgb(215, 215, 215);
-border-radius: 3px;
-margin: 5px;
+    border-color: rgb(215, 215, 215);
+    border-radius: 3px;
+    margin: 5px;
 }
