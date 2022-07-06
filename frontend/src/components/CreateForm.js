@@ -1,6 +1,6 @@
 
 import flightsStore from "../stores/flightsStore";
-import './App.css';
+import "../assets/app.css";
 
 
 export default function CreateForm() {

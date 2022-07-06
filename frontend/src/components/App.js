@@ -4,7 +4,8 @@ import Flights from "./Flights";
 import UpdateForm from "./UpdateForm";
 import CreateForm from "./CreateForm";
 import Navbar from "./Navbar";
-import "./App.css";
+import "../assets/app.css";
+import analyticsicon from "../assets/icon.png";
 
 
 function App() {
@@ -20,15 +21,18 @@ function App() {
         <Navbar />
 
         <div class="wrapper">
-            {/* <header class="header">Header: Fixed height</header> */}
             <section class="content">
                 <div class="columns">
-                    <main class="main"><Flights /></main>
+                    <main class="main">
+                        <Flights />
+                        <div className="analytics-div">
+                            <img src={analyticsicon} className="analyticsicon" alt="analytics-icon" title="Analytics (BETA)" />
+                        </div>
+                    </main>
                     <aside class="sidebar-first"><CreateForm /></aside>
                     <aside class="sidebar-second"><UpdateForm /></aside>
                 </div>
             </section>
-            {/* <footer class="footer">Footer: Fixed height</footer> */}
         </div>
 
     </>

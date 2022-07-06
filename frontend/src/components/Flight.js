@@ -4,17 +4,23 @@ import {ButtonGroup} from 'react-bootstrap';
 import {Table} from 'react-bootstrap';
 import {ProgressBar} from 'react-bootstrap';
 import flightsStore from "../stores/flightsStore";
-import "./App.css";
+import "../assets/app.css";
+
+
+
 
 export default function Flight({ flight }) {
+
   const store = flightsStore((store) => {
     return { deleteFlight: store.deleteFlight, toggleUpdate: store.toggleUpdate };
   });
 
   return (
+
     <div key={flight._id}>
       <h3>{flight.title}</h3>
       
+
               <Table class="maincontent" striped borderless responsive="sm" size="sm" hover variant="dark">
                   <thead class="thead">
                     <tr>
@@ -58,4 +64,5 @@ export default function Flight({ flight }) {
                     </div>
     </div>
   );
+  
 }
