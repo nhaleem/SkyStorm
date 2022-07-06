@@ -36,6 +36,7 @@ nav {
     font-size: 14px;
     margin-right: 19px;
 
+
 }
 
 .nav--icon {
@@ -65,18 +66,18 @@ nav {
     }
   }
 
-
 .analyticsicon{
-    max-height: 60px;
-    max-width: 60px;
-    margin-left: 760px;
+    float: right;
+    max-height: 50px;
+    max-width: 50px;
     margin-top: -15px;
     cursor: pointer;
+    box-shadow: 0px 1px 1px 0 rgba(28, 28, 28, 0.5);
+    
 }
 .analyticsicon:hover {
-    opacity: .5;
+    opacity: .75;
   }
-
 
 .wrapper{
     margin-top: 0px;
@@ -126,6 +127,7 @@ nav {
 }
 .add-flight-button{
     padding: 15px;
+    
 }
 .sidebar-second{ 
     margin: 25px;
@@ -167,6 +169,7 @@ nav {
     margin-left: 4px;
     margin-top: -15px;
     margin-bottom: 10px;
+    
 }
 
 .content-title {

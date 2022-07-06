@@ -3,7 +3,9 @@ import flightsStore from "../stores/flightsStore";
 export default function UpdateForm() {
   const store = flightsStore();
 
-  // if (!store.updateForm._id) return <></>;
+  if (store.updateForm.currentPassengers > store.updateForm.passengerLimit) {
+    window.alert("Passenger count must be equal to or less than: " + store.updateForm.passengerLimit)
+  } 
 
   return (
           <>

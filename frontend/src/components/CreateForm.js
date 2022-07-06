@@ -6,7 +6,9 @@ import "../assets/app.css";
 export default function CreateForm() {
   const store = flightsStore();
 
-//   if (store.updateForm._id) 
+  if (store.createForm.currentPassengers > store.createForm.passengerLimit) {
+    window.alert("Passenger count must be equal to or less than: " + store.createForm.passengerLimit)
+  } 
 
   return (
         <>
@@ -16,7 +18,7 @@ export default function CreateForm() {
                     <input
                     className="inputform"
                     onChange={store.updateCreateFormField}
-                    value={store.createForm.title}
+                    value={store.createForm.flightNumber}
                     name="flightNumber"
                     placeholder="Flight Number"
                     />
@@ -24,7 +26,7 @@ export default function CreateForm() {
                     <input
                     className="inputform"
                     onChange={store.updateCreateFormField}
-                    value={store.createForm.title}
+                    value={store.createForm.passengerLimit}
                     name="passengerLimit"
                     placeholder="Passenger Limit"
                     />
@@ -32,7 +34,7 @@ export default function CreateForm() {
                     <input
                     className="inputform"
                     onChange={store.updateCreateFormField}
-                    value={store.createForm.title}
+                    value={store.createForm.currentPassengers}
                     name="currentPassengers"
                     placeholder="Curr Passengers"
                     />
@@ -40,7 +42,7 @@ export default function CreateForm() {
                     <input
                     className="inputform"
                     onChange={store.updateCreateFormField}
-                    value={store.createForm.title}
+                    value={store.createForm.arrivalAirport}
                     name="arrivalAirport"
                     placeholder="Arr Airport"
                     />
@@ -48,7 +50,7 @@ export default function CreateForm() {
                     <input
                     className="inputform"
                     onChange={store.updateCreateFormField}
-                    value={store.createForm.title}
+                    value={store.createForm.arrivalDate}
                     name="arrivalDate"
                     placeholder="Arr Date"
                     />
@@ -56,7 +58,7 @@ export default function CreateForm() {
                     <input
                     className="inputform"
                     onChange={store.updateCreateFormField}
-                    value={store.createForm.title}
+                    value={store.createForm.arrivalTime}
                     name="arrivalTime"
                     placeholder="Arr Time"
                     />
@@ -64,7 +66,7 @@ export default function CreateForm() {
                     <input
                     className="inputform"
                     onChange={store.updateCreateFormField}
-                    value={store.createForm.title}
+                    value={store.createForm.departureAirport}
                     name="departureAirport"
                     placeholder="Dep Airport"
                     />
@@ -72,7 +74,7 @@ export default function CreateForm() {
                     <input
                     className="inputform"
                     onChange={store.updateCreateFormField}
-                    value={store.createForm.title}
+                    value={store.createForm.departureDate}
                     name="departureDate"
                     placeholder="Dep Date"
                     />
@@ -80,7 +82,7 @@ export default function CreateForm() {
                     <input
                     className="inputform"
                     onChange={store.updateCreateFormField}
-                    value={store.createForm.title}
+                    value={store.createForm.departureTime}
                     name="departureTime"
                     placeholder="Dep Time"
                     />
