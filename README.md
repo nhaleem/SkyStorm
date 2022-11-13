@@ -1,4 +1,4 @@
-# SkyStorm Flight Management Software (Project #1)
+# SkyStorm Flight Management Software (MERN Project)
 
 ![image info](SSLogo.png)
 
